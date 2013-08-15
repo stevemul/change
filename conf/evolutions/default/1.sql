@@ -8,6 +8,8 @@ create table change (
   initiated                 timestamp,
   summary                   varchar(255),
   description               varchar(255),
+  iao_approved              boolean,
+  test_approved             boolean,
   initiator_userid          varchar(255),
   builder_userid            varchar(255),
   constraint pk_change primary key (id))
@@ -15,9 +17,9 @@ create table change (
 
 create table outage (
   id                        bigint not null,
-  change_id                 bigint not null,
   length                    integer,
   description               varchar(255),
+  change_id                 bigint,
   constraint pk_outage primary key (id))
 ;
 

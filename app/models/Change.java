@@ -13,6 +13,8 @@ public class Change extends Model {
     public String summary;
     public String description;
     public System system;
+    public boolean iaoApproved;
+    public boolean testApproved;
 
     @ManyToOne
     public User initiator;
@@ -20,8 +22,8 @@ public class Change extends Model {
     @ManyToOne
     public User builder;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
-    public List<Outage> outages = new ArrayList<Outage>();
+//    @OneToMany(cascade = CascadeType.PERSIST)
+//    public List<Outage> outages = new ArrayList<Outage>();
 
     public Change(String summary, String description, User initiator, User builder, System system) {
         this.summary = summary;
