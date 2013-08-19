@@ -47,4 +47,7 @@ public class Change extends Model {
 //    public static List<Project> findInvolving(String user) {
 //        return find.where().eq("members.email", user).findList();
 //    }
+    public String getSummary(){
+        return this.summary;
+    }
 }

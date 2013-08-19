@@ -1,0 +1,41 @@
+# Users
+- &bob !!models.User  
+    userid:     bob@example.com
+    name:       Bob
+    password:   secret
+
+- &jane !!models.User
+    userid:     jane@example.com
+    name:       Jane
+    password:   secret
+
+- &jeff !!models.User
+    userid:     jeff@example.com
+    name:       Jeff
+    password:   secret
+
+
+# Systems
+
+- &system1 !!models.System
+    id:        100
+    name:      Email
+    iao:       *bob
+
+
+# Changes
+- &change1 !!models.Change
+    id:             10
+    summary:        Small change
+    description:    Description of a small change
+    system:         *system1
+    iaoApproved:    false
+    testApproved:   false
+
+# Outages
+
+- &outage1 !!models.Outage
+    id:             5
+    system:         *system1
+    length:         3
+    description:    outage of email

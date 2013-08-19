@@ -1,0 +1,32 @@
+@(changes: List[Change], outages: List[Outage])
+
+@main("Welcome to Play 2.1") {
+    
+    <header>
+        <hgroup>
+            <h1>Dashboard</h1>
+            <h2>Outages over all changes</h2>
+        </hgroup>
+    </header> 
+
+    <article  class="tasks">
+        @outages.groupBy(_.change).map {
+            case (change, outages) => {
+                <div class="folder" data-folder-id="@change.id">
+                    <header>
+                        <h3>@change.summary</h3>
+                    </header>
+                    <ul class="list">
+                        @outages.map { outage =>
+                            <li data-outage-id="@outage.id">
+                                <h4>@outage.description</h4>
+                                
+                                
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        }
+    </article>
+}

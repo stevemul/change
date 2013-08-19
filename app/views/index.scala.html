@@ -1,7 +1,20 @@
-@(message: String)
+@(changes: List[Change])
 
-@main("Welcome to Play 2.1") {
-    
-    @play20.welcome(message, style = "Java")
-    
+@main("Welcome to Play 2.0") {
+
+    <header>
+        <hgroup>
+            <h1>Dashboard</h1>
+            <h2>Tasks over all projects</h2>
+        </hgroup>
+    </header>
+    <article  class="changes">
+        <ul>
+             @for(c <- changes) {
+	    <li>@c.getSummary()</li>
+	    } 
+	</ul>
+    </article>
+
+
 }
