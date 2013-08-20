@@ -11,7 +11,7 @@ import views.html.*;
 public class Application extends Controller {
   
     public static Result index() {
-        return ok(index.render(Change.find.all()
+        return ok(index.render(Change.find.all(),Outage.find.all()
         ));
 //index.render(
   //          Change.find.all(),

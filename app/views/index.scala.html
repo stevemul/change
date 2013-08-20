@@ -1,4 +1,4 @@
-@(changes: List[Change])
+@(changes: List[Change], outages: List[Outage])
 
 @main("Welcome to Play 2.0") {
 
@@ -14,6 +14,14 @@
 	    <li>@c.getSummary()</li>
 	    } 
 	</ul>
+    </article>
+
+    <article  class="outages">
+        <ul>
+             @for(o <- outages) {
+            <li>@o.getDescription()</li>
+            }
+        </ul>
     </article>
 
 

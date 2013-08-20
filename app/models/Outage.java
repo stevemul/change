@@ -35,4 +35,9 @@ public class Outage extends Model {
             .eq("System.name", system)
             .findList();
     }
+
+    public String getDescription()
+    {
+        return this.description;
+    }
 }
